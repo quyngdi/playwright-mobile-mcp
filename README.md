@@ -76,10 +76,7 @@ Create or update your MCP configuration file (usually in Cursor settings):
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp-server"],
-      "env": {
-        "PLAYWRIGHT_BROWSERS_PATH": "~/.cache/ms-playwright"
-      }
+      "args": ["-y", "@playwright/mcp@latest"]
     }
   }
 }
@@ -106,11 +103,8 @@ Add mobile MCP to your MCP configuration:
 {
   "mcpServers": {
     "mobile-mcp": {
-      "command": "mobile-mcp",
-      "args": ["--port", "4723"],
-      "env": {
-        "APPIUM_HOME": "~/.appium"
-      }
+      "command": "npx",
+      "args": ["-y", "@mobilenext/mobile-mcp@0.0.19"]
     }
   }
 }
@@ -288,17 +282,11 @@ The project relies on MCP (Model Context Protocol) for automation. Ensure your `
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp-server"],
-      "env": {
-        "PLAYWRIGHT_BROWSERS_PATH": "~/.cache/ms-playwright"
-      }
+      "args": ["-y", "@playwright/mcp@latest"]
     },
     "mobile-mcp": {
-      "command": "mobile-mcp",
-      "args": ["--port", "4723"],
-      "env": {
-        "APPIUM_HOME": "~/.appium"
-      }
+      "command": "npx",
+      "args": ["-y", "@mobilenext/mobile-mcp@0.0.19"]
     }
   }
 }
