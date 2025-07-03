@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.609147">
+<testsuite name="website-test-case.spec.js" timestamp="2025-07-03T04:01:57.025Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.552" errors="0">
+<testcase name="TC-001-Moneta-Pass-Onboarding › TC-001: Verify admin users can navigate to MO Core Admin page, search user and give user the QR code to onboard mPass" classname="website-test-case.spec.js" time="6.552">
+<system-out>
+<![CDATA[Step 1: Navigate to MO Core Admin website
+✓ Homepage loaded successfully
+Step 2: Sign In to the account
+✓ Sign-in successful and user is logged in
+Step 3: Navigate to STG United Airlines Org
+✓ [STG] US Airlines environment selected
+Step 4: Search user and verify the QR code
+✓ QR code in the Onboard Device section is displayed
+🎉 All test steps completed successfully!
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

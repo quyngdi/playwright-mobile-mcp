@@ -1,0 +1,147 @@
+{
+  "executionId": "exec-2025-01-18-23-30",
+  "timestamp": "2025-01-18T23:30:00Z",
+  "testFiles": [
+    {
+      "fileName": "website-test-case.md",
+      "filePath": "manual-test-cases/website-test-case.md",
+      "status": "SUCCESS",
+      "totalSteps": 4,
+      "successfulSteps": 4,
+      "failedSteps": 0,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Navigate to MO Core Admin website",
+          "type": "web",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "playwright-mcp",
+            "url": "https://mo-admin.dev.pressingly.net/",
+            "action": "navigate",
+            "selectors": {
+              "environmentSelector": "combobox",
+              "navigation": "navigation",
+              "usersTab": "link[href='/users']",
+              "logo": "heading[text='Welcome to MO Core Admin']"
+            }
+          }
+        },
+        {
+          "stepNumber": 2,
+          "description": "Sign In to the account",
+          "type": "web",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "playwright-mcp",
+            "action": "verify",
+            "note": "User was already authenticated and in correct environment [STG] US Airlines",
+            "verificationElements": [
+              "button[text='Logout']",
+              "generic[text='[STG] US Airlines']"
+            ]
+          }
+        },
+        {
+          "stepNumber": 3,
+          "description": "Navigate to STG United Airlines Org",
+          "type": "web",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "playwright-mcp",
+            "action": "verify",
+            "note": "Environment [STG] US Airlines was already selected",
+            "verificationElements": [
+              "generic[text='[STG] US Airlines']"
+            ]
+          }
+        },
+        {
+          "stepNumber": 4,
+          "description": "Search user and verify the QR code",
+          "type": "web",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "playwright-mcp",
+            "action": "search_and_verify",
+            "selectors": {
+              "usersTab": "link[href='/users']",
+              "searchBox": "textbox[placeholder='Search email...']",
+              "userIdButton": "button[text='516e6462f1b6']",
+              "qrCode": "img[alt='QR Code']",
+              "onboardSection": "heading[text='Onboard Device']"
+            },
+            "searchEmail": "quy.nguyen@coderpush.com",
+            "userId": "516e6462f1b6",
+            "fullUserId": "1e286130-102b-4311-8086-516e6462f1b6",
+            "qrCodeVerified": true
+          }
+        }
+      ]
+    },
+    {
+      "fileName": "mobile-test-case.md",
+      "filePath": "manual-test-cases/mobile-test-case.md",
+      "status": "SUCCESS",
+      "totalSteps": 2,
+      "successfulSteps": 2,
+      "failedSteps": 0,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "description": "Navigate to Preferences on the mobile app",
+          "type": "mobile",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "mobile-automation",
+            "deviceId": "emulator-5554",
+            "platform": "Android",
+            "appPackage": "com.pressingly.moneta.staging",
+            "action": "navigate_to_preferences",
+            "elements": [
+              "button[label='Preferences Tab 3 of 3']"
+            ],
+            "coordinates": {
+              "x": 960,
+              "y": 2756
+            },
+            "verificationElements": [
+              "android.widget.Switch[label='Approve first transaction from a publisher']",
+              "android.widget.Switch[label='Alert or approve transactions exceeding']",
+              "android.widget.Switch[label='Alert or approve transactions if total spending exceeds']",
+              "android.widget.Button[label='Set spending limit for publishers']"
+            ]
+          }
+        },
+        {
+          "stepNumber": 2,
+          "description": "Turn on a policy",
+          "type": "mobile",
+          "status": "SUCCESS",
+          "automationContext": {
+            "tool": "mobile-automation",
+            "deviceId": "emulator-5554",
+            "platform": "Android",
+            "action": "toggle_policy",
+            "targetPolicy": "Approve first transaction from a publisher",
+            "policyType": "android.widget.Switch",
+            "coordinates": {
+              "x": 28,
+              "y": 509
+            },
+            "policyTurnedOn": true
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTestFiles": 2,
+    "successfulTestFiles": 2,
+    "failedTestFiles": 0,
+    "totalSteps": 6,
+    "successfulSteps": 6,
+    "failedSteps": 0,
+    "successRate": "100%"
+  }
+} 

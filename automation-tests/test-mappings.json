@@ -1,0 +1,123 @@
+{
+  "generatedOn": "2025-01-18T22:30:00Z",
+  "executionResultsSource": "restuls/execution-results.json",
+  "mappings": [
+    {
+      "originalTestCase": {
+        "fileName": "website-test-case.md",
+        "filePath": "manual-test-cases/website-test-case.md",
+        "testCaseId": "TC-001-Moneta-Pass-Onboarding",
+        "objective": "Verify that admin users can navigate to the MO Core Admin page, search user and give user the QR code to onboard mPass",
+        "totalSteps": 4,
+        "testType": "web"
+      },
+      "generatedAutomationTest": {
+        "fileName": "website-test-case.spec.js",
+        "filePath": "automation-tests/tests/website-test-case.spec.js",
+        "framework": "Playwright",
+        "pageObjects": [
+          "automation-tests/pages/moAdminPage.js"
+        ],
+        "utilities": [
+          "automation-tests/utils/webUtils.js",
+          "automation-tests/utils/configUtils.js"
+        ],
+        "dependencies": [
+          "@playwright/test"
+        ]
+      },
+      "automationContext": {
+        "baseUrl": "https://mo-admin.dev.pressingly.net/",
+        "credentials": {
+          "email": "test@pressingly.net",
+          "password": "Coderpush@123"
+        },
+        "keySelectors": {
+          "emailInput": "textbox[name='Email']",
+          "passwordInput": "textbox[name='Password']",
+          "signInButton": "button[name='Sign in']",
+          "environmentDropdown": "combobox",
+          "usersLink": "link[name='Users']",
+          "userIdButton": "button[name='516e6462f1b6']",
+          "qrCodeImage": "img[alt='QR Code']"
+        }
+      }
+    },
+    {
+      "originalTestCase": {
+        "fileName": "mobile-test-case.md",
+        "filePath": "manual-test-cases/mobile-test-case.md",
+        "testCaseId": "TC-002-Mobile-Policies",
+        "objective": "Verify that users can navigate to the Preferences in the mobile app to configure the policies",
+        "totalSteps": 2,
+        "testType": "mobile"
+      },
+      "generatedAutomationTest": {
+        "fileName": "mobile-test-case.spec.js",
+        "filePath": "automation-tests/tests/mobile-test-case.spec.js",
+        "framework": "Playwright + Mobile MCP",
+        "pageObjects": [
+          "automation-tests/pages/mobilePage.js"
+        ],
+        "utilities": [
+          "automation-tests/utils/mobileUtils.js",
+          "automation-tests/utils/configUtils.js"
+        ],
+        "dependencies": [
+          "@playwright/test",
+          "adb (Android Debug Bridge)"
+        ]
+      },
+      "automationContext": {
+        "deviceId": "emulator-5554",
+        "platform": "Android",
+        "appPackage": "com.pressingly.moneta.staging",
+        "keyCoordinates": {
+          "preferencesButton": { "x": 1200, "y": 2896 },
+          "policyToggle": { "x": 720, "y": 600 }
+        },
+        "keyElements": [
+          "android.widget.Switch[label='Approve first transaction from a publisher']",
+          "android.widget.Switch[label='Alert or approve transactions exceeding']",
+          "android.widget.Switch[label='Alert or approve transactions if total spending exceeds']",
+          "android.widget.Button[label='Set spending limit for publishers']"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "totalOriginalTestCases": 2,
+    "totalGeneratedTests": 2,
+    "webTests": 1,
+    "mobileTests": 1,
+    "combinedTests": 0,
+    "frameworks": [
+      "Playwright",
+      "Mobile MCP"
+    ],
+    "testEnvironments": [
+      "Web Browser (Chromium, Firefox, WebKit)",
+      "Android Emulator (emulator-5554)"
+    ]
+  },
+  "fileStructure": {
+    "tests": [
+      "automation-tests/tests/website-test-case.spec.js",
+      "automation-tests/tests/mobile-test-case.spec.js"
+    ],
+    "pageObjects": [
+      "automation-tests/pages/moAdminPage.js",
+      "automation-tests/pages/mobilePage.js"
+    ],
+    "utilities": [
+      "automation-tests/utils/webUtils.js",
+      "automation-tests/utils/mobileUtils.js",
+      "automation-tests/utils/configUtils.js"
+    ],
+    "configuration": [
+      "automation-tests/config/playwright.config.js",
+      "automation-tests/config/globalSetup.js",
+      "automation-tests/config/globalTeardown.js"
+    ]
+  }
+} 

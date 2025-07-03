@@ -1,0 +1,63 @@
+{
+  "name": "playwright-mobile-mcp-demo",
+  "version": "1.0.0",
+  "description": "Automated test suite combining Playwright web automation and Mobile MCP integration for end-to-end testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:website": "npx playwright test automation-tests/tests/website-test-case.spec.js",
+    "test:mobile": "npx playwright test automation-tests/tests/mobile-test-case.spec.js",
+    "report": "npx playwright show-report automation-tests/reports/html-report",
+    "install:playwright": "npx playwright install",
+    "install:deps": "npx playwright install-deps",
+    "setup": "npm run install:playwright && npm run install:deps",
+    "setup:mcp": "npm install -g @playwright/mcp-server @appium/mobile-mcp appium && appium driver install uiautomator2",
+    "start:appium": "appium --port 4723 --base-path /wd/hub",
+    "verify:mcp": "npm run check:playwright-mcp && npm run check:mobile-mcp",
+    "check:playwright-mcp": "npx playwright --version",
+    "check:mobile-mcp": "appium --version",
+    "test:mcp": "npm run check:playwright-mcp && npm run check:mobile-mcp && npm run check:devices",
+    "check:devices": "adb devices",
+    "check:apps": "adb -s emulator-5554 shell pm list packages | grep moneta",
+    "clean": "rm -rf automation-tests/test-results screenshots/*.png",
+    "lint": "eslint automation-tests/**/*.js",
+    "format": "prettier --write automation-tests/**/*.js"
+  },
+  "keywords": [
+    "playwright",
+    "mobile-automation",
+    "appium",
+    "mcp",
+    "e2e-testing",
+    "android",
+    "web-automation"
+  ],
+  "author": "MCP Test Automation Team",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.40.0",
+    "appium": "^2.0.0",
+    "webdriverio": "^8.20.0",
+    "@playwright/mcp-server": "^1.0.0",
+    "@appium/mobile-mcp": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/playwright-mobile-mcp-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/playwright-mobile-mcp-demo/issues"
+  },
+  "homepage": "https://github.com/your-org/playwright-mobile-mcp-demo#readme"
+} 

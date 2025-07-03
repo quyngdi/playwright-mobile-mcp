@@ -1,0 +1,157 @@
+{
+  "config": {
+    "configFile": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/playwright.config.js",
+    "rootDir": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/automation-tests/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/automation-tests/config/globalSetup.js",
+    "globalTeardown": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/automation-tests/config/globalTeardown.js",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "./automation-tests/reports/html-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./automation-tests/reports/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "./automation-tests/reports/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/automation-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/quynguyen/Desktop/CP/playwright-mobile-mcp-demo/automation-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.53.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "website-test-case.spec.js",
+      "file": "website-test-case.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TC-001-Moneta-Pass-Onboarding",
+          "file": "website-test-case.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-001: Verify admin users can navigate to MO Core Admin page, search user and give user the QR code to onboard mPass",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6552,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Step 1: Navigate to MO Core Admin website\n"
+                        },
+                        {
+                          "text": "✓ Homepage loaded successfully\n"
+                        },
+                        {
+                          "text": "Step 2: Sign In to the account\n"
+                        },
+                        {
+                          "text": "✓ Sign-in successful and user is logged in\n"
+                        },
+                        {
+                          "text": "Step 3: Navigate to STG United Airlines Org\n"
+                        },
+                        {
+                          "text": "✓ [STG] US Airlines environment selected\n"
+                        },
+                        {
+                          "text": "Step 4: Search user and verify the QR code\n"
+                        },
+                        {
+                          "text": "✓ QR code in the Onboard Device section is displayed\n"
+                        },
+                        {
+                          "text": "🎉 All test steps completed successfully!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-03T04:01:57.404Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "706658605ebd49859a40-5b25f2bf8375b7a2962e",
+              "file": "website-test-case.spec.js",
+              "line": 22,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-07-03T04:01:56.875Z",
+    "duration": 8609.147,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
